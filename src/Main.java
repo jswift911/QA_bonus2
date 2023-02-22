@@ -1,15 +1,18 @@
 public class Main {
     public static void main(String[] args) {
         //Сумма на счете у клиента
-        int client_amount = 100;
+        int clientAmount = 100;
         //Сумма пополнения
-        int added_sum = 1100;
+        int addedSum = 1100;
+        //Бонусы
+        int bonus = (addedSum >= 1000) ? addedSum / 100 : 0;
 
         //Итоговая сумма
-        int result_sum = (added_sum >= 1000)
-                ? client_amount + (added_sum / 100) + added_sum
-                : client_amount + added_sum;
+        int resultSum = (addedSum >= 1000)
+                ? clientAmount + bonus + addedSum
+                : clientAmount + addedSum;
 
-        System.out.println("Ваш балланс " + result_sum + " рублей.");
+        System.out.println("Ваш балланс " + resultSum + " рублей.");
+        System.out.println("Ваш бонус " + bonus + " рублей.");
     }
 }
